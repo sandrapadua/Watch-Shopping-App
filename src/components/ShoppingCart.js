@@ -38,11 +38,11 @@ let addedItems = items.length ?
                                         <p>
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
-                                        <div>
+                                        <div className= 'quantity-class'>
                                         <Link to="/shoppingCart"><p  onClick={()=>{this.handleAddQuantity(item.id)}}><h1>+</h1></p></Link>
-                                       <br/> <Link to="/shoppingCart"><p onClick={()=>{this.handleSubtractQuantity(item.id)}}><h1>-</h1></p></Link>
+                                       <Link to="/shoppingCart"><p onClick={()=>{this.handleSubtractQuantity(item.id)}}><h1>-</h1></p></Link>
                                         </div>
-                                        <button onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
+                                        <button onClick={()=>{this.handleRemove(item.id)}}>Remove Item</button>
                                         </div></li></div>)
                 })
             ):
