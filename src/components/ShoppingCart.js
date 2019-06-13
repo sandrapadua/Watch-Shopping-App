@@ -30,7 +30,7 @@ let addedItems = items.length ?
                        <div>
                         <li key={item.id}>
                         <div>
-                        <img className ='image-size' src={item.image} alt={item.Manufacturer}/><br/>
+                        <img className ='image-size'src={item.image} alt={item.Manufacturer}/><br/>
 
                                         <span >{item.Manufacturer}</span>
                                         <p>{item.desc}</p>
@@ -51,7 +51,7 @@ let addedItems = items.length ?
                 <p>cart is empty!!!</p>
              )
 
-        return(<div className="cart">
+        return(<div className="flex-container">
         <h3>You have ordered:</h3>
         {addedItems}
 <Reciept/>

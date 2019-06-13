@@ -18,13 +18,14 @@ render(){
         return(
             <div  className ='flex-container' key={item.id}>
                     <div >
+                      
                     <h1 >{item.Manufacturer}</h1>
                     <img className ='image-size' src={item.image} alt={item.Manufacturer}/><br/>
                         <p>{item.desc}</p>
                         <p>{item.Material}</p>
                         <p>{item.color}</p>
                         <p><b>Price: {item.Price}$</b></p>
-                        <span  onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span><br/><br/>
+                        <span className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span><br/><br/>
                     </div>
              </div>
 
