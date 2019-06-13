@@ -1,6 +1,6 @@
-import Fastrack from '../images/fasttrack.jpeg'
-import Casio from '../images/Casio.jpeg'
-import Fogg from '../images/Fogg.jpeg'
+import Fastrack from './images/fasttrack.jpeg'
+import Casio from './images/Casio.jpeg'
+import Fogg from './images/Fogg.jpeg'
 
 
 
@@ -48,7 +48,13 @@ const cartReducers = (state = initialState, action = {}) => {
 
         case 'ADD_TO_CART':{
         console.log("add to cart",state.items)
+        console.log("total price",state.total)
+
+        
+
             let addedItem = state.items.find(item=> item.id === action.id)
+            console.log("adde item price",addedItem.Price )
+
             console.log("added item",addedItem)
            let existed_item= state.addedItems.find(item=> action.id === item.id)
            if(existed_item)
@@ -56,13 +62,13 @@ const cartReducers = (state = initialState, action = {}) => {
               addedItem.quantity += 1 
                return{
                   ...state,
-                   total: state.total + addedItem.price 
+                   total: state.total + addedItem.Price 
                     }
           }
            else{
               addedItem.quantity = 1;
   
-              let newTotal = state.total + addedItem.price 
+              let newTotal = state.total + addedItem.Price 
               
               return{
                   ...state,
@@ -75,7 +81,7 @@ const cartReducers = (state = initialState, action = {}) => {
           let addedItem = state.items.find(item=> item.id === action.id)
           console.log("ADDING QUANTIY",addedItem)
           addedItem.quantity += 1 
-          let newTotal = state.total + addedItem.price
+          let newTotal = state.total + addedItem.Price
           return{
               ...state,
               total: newTotal
@@ -86,7 +92,7 @@ const cartReducers = (state = initialState, action = {}) => {
         //if the quantity == 0 then it should be removed
         if(addedItem.quantity === 1){
             let new_items = state.addedItems.filter(item=>item.id !== action.id)
-            let newTotal = state.total - addedItem.price
+            let newTotal = state.total - addedItem.Price
             return{
                 ...state,
                 addedItems: new_items,
@@ -95,7 +101,7 @@ const cartReducers = (state = initialState, action = {}) => {
         }
         else {
             addedItem.quantity -= 1
-            let newTotal = state.total - addedItem.price
+            let newTotal = state.total - addedItem.Price
             return{
                 ...state,
                 total: newTotal
@@ -108,7 +114,7 @@ const cartReducers = (state = initialState, action = {}) => {
         let new_items = state.addedItems.filter(item=> action.id !== item.id)
         
         //calculating the total
-        let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity )
+        let newTotal = state.total - (itemToRemove.Price * itemToRemove.quantity )
         console.log(itemToRemove)
         return{
             ...state,

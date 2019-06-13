@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from '../actions/cartActions'
+import Reciept from './Reciept'
 class ShoppingCart extends Component{
 
 //for adding quantity
@@ -19,8 +20,8 @@ handleRemove = (id)=>{
 
     render(){
 
-console.log("items in cart",this.props.items.cartReducer.addedItems)
-let items = this.props.items.cartReducer.addedItems
+console.log("items in cart",this.props.items)
+let items = this.props.items
 
 let addedItems = items.length ?
             (  
@@ -47,12 +48,13 @@ let addedItems = items.length ?
             ):
 
              (
-                <p>Nothing.</p>
+                <p>cart is empty!!!</p>
              )
 
         return(<div className="cart">
         <h3>You have ordered:</h3>
         {addedItems}
+<Reciept/>
     </div> )
     }
 }
@@ -60,7 +62,7 @@ let addedItems = items.length ?
 
 const mapStateToProps = (state)=>{
     return{
-        items: state,
+        items: state.addedItems
     }
 }
 const mapDispatchToProps = (dispatch)=>{

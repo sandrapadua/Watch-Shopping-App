@@ -10,7 +10,7 @@ class ShoppingListContainer extends React.Component {
     }
 
 render(){
-    let items=this.props.items.cartReducer.items
+    let items=this.props.items
     console.log("initial state",items)
  
 
@@ -40,7 +40,7 @@ render(){
 
 const mapStateToProps = (state)=>{
     return {
-      items: state
+      items: state.items
     }
   }
   const mapDispatchToProps= (dispatch)=>{
