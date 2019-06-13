@@ -12,8 +12,10 @@ class ShoppingCart extends Component{
 handleSubtractQuantity = (id)=>{
     this.props.subtractQuantity(id);
 }
-
-
+//for removing item
+handleRemove = (id)=>{
+    this.props.removeItem(id);
+}
 
     render(){
 
@@ -36,9 +38,10 @@ let addedItems = items.length ?
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
                                         <div>
-                                        <Link to="/cart"><i  onClick={()=>{this.handleAddQuantity(item.id)}}><b>+</b></i></Link>
-                                       <br/> <Link to="/cart"><i onClick={()=>{this.handleSubtractQuantity(item.id)}}><b>-</b></i></Link>
+                                        <Link to="/cart"><p  onClick={()=>{this.handleAddQuantity(item.id)}}><h1>+</h1></p></Link>
+                                       <br/> <Link to="/cart"><p onClick={()=>{this.handleSubtractQuantity(item.id)}}><h1>-</h1></p></Link>
                                         </div>
+                                        <button onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
                                         </div></li></div>)
                 })
             ):
@@ -60,5 +63,12 @@ const mapStateToProps = (state)=>{
         items: state,
     }
 }
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        removeItem: (id)=>{dispatch(removeItem(id))},
+        addQuantity: (id)=>{dispatch(addQuantity(id))},
+        subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
+    }
+}
 
-export default connect(mapStateToProps)(ShoppingCart)
+export default connect(mapStateToProps,mapDispatchToProps)(ShoppingCart)

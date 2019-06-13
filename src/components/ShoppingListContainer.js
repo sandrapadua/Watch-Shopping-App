@@ -24,7 +24,7 @@ render(){
                         <p>{item.Material}</p>
                         <p>{item.color}</p>
                         <p><b>Price: {item.Price}$</b></p>
-                        <span to ="/" onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span>
+                        <span  onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span>
                     </div>
              </div>
 
