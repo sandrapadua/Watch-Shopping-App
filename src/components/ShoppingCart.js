@@ -30,7 +30,7 @@ let addedItems = items.length ?
                        <div>
                         <li key={item.id}>
                         <div>
-                        <img src={item.image} alt={item.Manufacturer}/><br/>
+                        <img className ='image-size' src={item.image} alt={item.Manufacturer}/><br/>
 
                                         <span >{item.Manufacturer}</span>
                                         <p>{item.desc}</p>

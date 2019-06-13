@@ -16,15 +16,15 @@ render(){
 
     let itemList = items.map(item=>{
         return(
-            <div  key={item.id}>
+            <div  className ='flex-container' key={item.id}>
                     <div >
-                    <img src={item.image} alt={item.Manufacturer}/><br/>
-                        <span >{item.Manufacturer}</span>
+                    <h1 >{item.Manufacturer}</h1>
+                    <img className ='image-size' src={item.image} alt={item.Manufacturer}/><br/>
                         <p>{item.desc}</p>
                         <p>{item.Material}</p>
                         <p>{item.color}</p>
                         <p><b>Price: {item.Price}$</b></p>
-                        <span  onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span>
+                        <span  onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span><br/><br/>
                     </div>
              </div>
 
