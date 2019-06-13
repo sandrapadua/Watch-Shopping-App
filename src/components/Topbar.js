@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom'
  const Topbar = ()=>{
     return(
-            <nav className="nav-wrapper">
-                <div >
-                    <Link to="/">Shopping</Link>
+            <nav className="navbar">
+                <div className = 'container'>
+                   <p> <Link to="/">Shopping</Link></p>
                     
                     <ul className="right">
-                        <li><Link to="/">Shop</Link></li>
-                        <li><Link to="/shoppingCart">My cart</Link></li>
+                        <p><Link to="/">Shop</Link></p>
+                        <p><Link to="/shoppingCart">My cart</Link></p>
 
                     </ul>
                 </div>
