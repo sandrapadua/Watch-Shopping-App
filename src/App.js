@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom'
+import ShoppingListContainer from './components/ShoppingListContainer'
+import ShoppingCart from './components/ShoppingCart'
+import Topbar from './components/Topbar'
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className = 'main-container'>
+        <Topbar/>
+        <h2>Shopping app</h2>
+        <Route exact path="/" component={ShoppingListContainer}/>
+        <Route path="/shoppingCart" component={ShoppingCart}/>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+        </div>
+      </BrowserRouter>
+
+    )}
+  }
 
 export default App;
