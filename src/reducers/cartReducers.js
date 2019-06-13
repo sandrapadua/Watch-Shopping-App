@@ -1,6 +1,5 @@
 import Fastrack from '../images/fasttrack.jpeg'
 import Casio from '../images/Casio.jpeg'
-import Fossil from '../images/Fossil.jpeg'
 import Fogg from '../images/Fogg.jpeg'
 
 
@@ -39,17 +38,48 @@ items:[
     Warranty: 'one year',
     Price:80
 }
-
-
-
-]
+],
+addedItems:[],
+total: 0
 }
 
 const cartReducers = (state = initialState, action = {}) => {
     switch (action.type) {
+
+        case 'ADD_TO_CART':
+        console.log("add to cart",state.items)
+            let addedItem = state.items.find(item=> item.id === action.id)
+            console.log("added item",addedItem)
+           let existed_item= state.addedItems.find(item=> action.id === item.id)
+           if(existed_item)
+           {
+              addedItem.quantity += 1 
+               return{
+                  ...state,
+                   total: state.total + addedItem.price 
+                    }
+          }
+           else{
+              addedItem.quantity = 1;
+  
+              let newTotal = state.total + addedItem.price 
+              
+              return{
+                  ...state,
+                  addedItems: [...state.addedItems, addedItem],
+                  total : newTotal
+              }
+            }
+            
+          
+      
+
+
+
     default:
-      return state.items
+      return state
     }
+    
   }
   
   export default cartReducers
