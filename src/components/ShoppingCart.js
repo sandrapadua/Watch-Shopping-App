@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { removeItem,addQuantity,subtractQuantity} from '../actions/cartActions'
 class ShoppingCart extends Component{
+
+//for adding quantity
+    handleAddQuantity = (id)=>{
+        this.props.addQuantity(id);
+    }
+//for substracting quantity
+handleSubtractQuantity = (id)=>{
+    this.props.subtractQuantity(id);
+}
+
+
+
     render(){
 
 console.log("items in cart",this.props.items.cartReducer.addedItems)
@@ -22,6 +35,10 @@ let addedItems = items.length ?
                                         <p>
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
+                                        <div>
+                                        <Link to="/cart"><i  onClick={()=>{this.handleAddQuantity(item.id)}}><b>+</b></i></Link>
+                                       <br/> <Link to="/cart"><i onClick={()=>{this.handleSubtractQuantity(item.id)}}><b>-</b></i></Link>
+                                        </div>
                                         </div></li></div>)
                 })
             ):
