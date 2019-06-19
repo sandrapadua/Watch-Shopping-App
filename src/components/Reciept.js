@@ -6,9 +6,9 @@ class Reciept extends Component{
 
 
         return(
-            <div>
+            <div className ='container left-margin-large bold-large-text'>
                 <p>Total: {this.props.total} $</p>
-            <button>Checkout</button>
+            <button className='bold-large-text bottom-margin'>Checkout</button>
         </div>
         )}
 }

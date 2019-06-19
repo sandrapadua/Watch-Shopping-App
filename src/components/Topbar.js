@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
  const Topbar = ()=>{
     return(
             <nav className="navbar">
-                <div className = 'container'>
-                   <p> Watch - Shopping</p>
-                    
-                    <ul className="right">
-                        <p><Link to="/">Shop</Link></p>
-                        <p><Link to="/shoppingCart">My cart</Link></p>
+                <div className = 'container-top'>
+                   <p className ='text-white'> Watch - Shopping</p> 
+                    <ul className="right text-white">
+                        <p ><Link className ='text-white' to="/">Shop</Link></p>
+                        <p><Link className ='text-white' to="/shoppingCart">My cart</Link></p>
 
                     </ul>
                 </div>

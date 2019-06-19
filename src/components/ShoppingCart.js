@@ -27,9 +27,9 @@ let addedItems = items.length ?
             (  
                 items.map(item=>{
                     return(
-                       <div>
-                        <li key={item.id}>
-                        <div>
+                        <div className ='single-item' key={item.id}>
+                        <div className ='single-item-styling'>
+
                         <img className ='image-size'src={item.image} alt={item.Manufacturer}/><br/>
 
                                         <span >{item.Manufacturer}</span>
@@ -38,12 +38,12 @@ let addedItems = items.length ?
                                         <p>
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
-                                        <div className= 'quantity-class'>
-                                        <Link to="/shoppingCart"><p  onClick={()=>{this.handleAddQuantity(item.id)}}><h1>+</h1></p></Link>
-                                       <Link to="/shoppingCart"><p onClick={()=>{this.handleSubtractQuantity(item.id)}}><h1>-</h1></p></Link>
-                                        </div>
-                                        <button onClick={()=>{this.handleRemove(item.id)}}>Remove Item</button>
-                                        </div></li></div>)
+                                        <div>
+                                        <Link className ='size-med ' to="/shoppingCart"onClick={()=>{this.handleAddQuantity(item.id)}}><button className='size-med' >+</button></Link>
+                                        <Link className ='size-med' to="/shoppingCart" onClick={()=>{this.handleSubtractQuantity(item.id)}}><button className = 'left-margin size-med'>-</button></Link>
+                                        </div><br/>
+                                        <button className ='size-small' onClick={()=>{this.handleRemove(item.id)}}>Remove Item</button>
+                                        </div> </div>)
                 })
             ):
 
@@ -51,10 +51,13 @@ let addedItems = items.length ?
                 <p>cart is empty!!!</p>
              )
 
-        return(<div className="flex-container">
-        <h3>You have ordered:</h3>
+        return(
+        <div className="container">
+        <h2 className="center"> Our Products </h2>
+        <div className = 'display-flex'>
         {addedItems}
-<Reciept/>
+        </div>
+        <Reciept/>
     </div> )
     }
 }

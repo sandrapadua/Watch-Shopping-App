@@ -7,6 +7,7 @@ class ShoppingListContainer extends React.Component {
 
        
     handleClick = (id)=>{
+        alert("Added to cart")
         console.log("clicked")
         this.props.addToCart(id); 
     }
@@ -18,16 +19,16 @@ render(){
 
     let itemList = items.map(item=>{
         return(
-            <div  className ='item-listing' key={item.id}>
-                    <div >
+            <div className ='single-item'  key={item.id}>
+                    <div className ='single-item-styling'>
                       
-                    <h1 >{item.Manufacturer}</h1>
-                    <img className ='image-size' src={item.image} alt={item.Manufacturer}/><br/>
+                    <h1 className = 'text-center'>{item.Manufacturer}</h1>
+                    <img className ='product-img' src={item.image} alt={item.Manufacturer}/><br/>
                         <p>{item.desc}</p>
                         <p>{item.Material}</p>
                         <p>{item.color}</p>
                         <p><b>Price: {item.Price}$</b></p>
-                       <Link to="/"> <span className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span></Link><br/><br/>
+                       <Link to="/"> <button className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></button></Link><br/><br/>
                     </div>
              </div>
 
@@ -37,7 +38,7 @@ console.log('ITEM LIST',itemList)
     return(
         <div className="container">
         <h2 className="center"> Our Products </h2>
-            <div className = 'box'>
+            <div className = 'display-flex'>
                 {itemList}
             </div>
          </div>)

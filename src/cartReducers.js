@@ -37,6 +37,36 @@ items:[
     color:'Brown',
     Warranty: 'one year',
     Price:80
+},
+{
+    id:4, 
+    Manufacturer: 'Fogg', 
+    image: Fogg,
+    desc: "Water Resistant, AnalogType, Style Code NF3123SL02C, Wrist Watch.",
+    Material:'Leather',
+    color:'Brown',
+    Warranty: 'one year',
+    Price:80
+},
+{
+    id:5, 
+    Manufacturer: 'Fogg', 
+    image: Fogg,
+    desc: "Water Resistant, AnalogType, Style Code NF3123SL02C, Wrist Watch.",
+    Material:'Leather',
+    color:'Brown',
+    Warranty: 'one year',
+    Price:80
+},
+{
+    id:6, 
+    Manufacturer: 'Fogg', 
+    image: Fogg,
+    desc: "Water Resistant, AnalogType, Style Code NF3123SL02C, Wrist Watch.",
+    Material:'Leather',
+    color:'Brown',
+    Warranty: 'one year',
+    Price:80
 }
 ],
 addedItems:[],
