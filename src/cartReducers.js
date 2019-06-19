@@ -1,6 +1,9 @@
 import Fastrack from './images/fasttrack.jpeg'
 import Casio from './images/Casio.jpeg'
 import Fogg from './images/Fogg.jpeg'
+import Fossil from './images/Fossil.png'
+import Armani from './images/Armani.png'
+import Aviator from './images/Aviator.jpg'
 
 
 
@@ -40,33 +43,33 @@ items:[
 },
 {
     id:4, 
-    Manufacturer: 'Fogg', 
-    image: Fogg,
+    Manufacturer: 'Fossil', 
+    image: Fossil,
     desc: "Water Resistant, AnalogType, Style Code NF3123SL02C, Wrist Watch.",
-    Material:'Leather',
-    color:'Brown',
+    Material:'stainless steel',
+    color:'Silver',
     Warranty: 'one year',
-    Price:80
+    Price:150
 },
 {
     id:5, 
-    Manufacturer: 'Fogg', 
-    image: Fogg,
+    Manufacturer: 'Armani', 
+    image: Armani,
     desc: "Water Resistant, AnalogType, Style Code NF3123SL02C, Wrist Watch.",
-    Material:'Leather',
-    color:'Brown',
+    Material:'steel',
+    color:'silver',
     Warranty: 'one year',
-    Price:80
+    Price:155
 },
 {
     id:6, 
-    Manufacturer: 'Fogg', 
-    image: Fogg,
+    Manufacturer: 'Aviator', 
+    image: Aviator,
     desc: "Water Resistant, AnalogType, Style Code NF3123SL02C, Wrist Watch.",
-    Material:'Leather',
-    color:'Brown',
+    Material:'steel',
+    color:'silver',
     Warranty: 'one year',
-    Price:80
+    Price:250
 }
 ],
 addedItems:[],

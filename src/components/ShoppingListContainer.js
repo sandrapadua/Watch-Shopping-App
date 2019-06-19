@@ -27,7 +27,7 @@ render(){
                         <p>{item.desc}</p>
                         <p>{item.Material}</p>
                         <p>{item.color}</p>
-                        <p><b>Price: {item.Price}$</b></p>
+                        <p><b>Price: ${item.Price}</b></p>
                        <Link to="/"> <button className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></button></Link><br/><br/>
                     </div>
              </div>

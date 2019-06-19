@@ -34,7 +34,7 @@ let addedItems = items.length ?
 
                                         <span >{item.Manufacturer}</span>
                                         <p>{item.desc}</p>
-                                        <p><b>Price: {item.Price}$</b></p> 
+                                        <p><b>Price: ${item.Price}</b></p> 
                                         <p>
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
