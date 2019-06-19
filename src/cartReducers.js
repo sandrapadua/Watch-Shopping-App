@@ -50,12 +50,13 @@ const cartReducers = (state = initialState, action = {}) => {
         console.log("add to cart",state.items)
         console.log("total price",state.total)
 
-        
+        console.log("action id",action.id)
+
 
             let addedItem = state.items.find(item=> item.id === action.id)
-            console.log("adde item price",addedItem.Price )
+            console.log("added item price",addedItem)
 
-            console.log("added item",addedItem)
+            console.log("added item",addedItem) // checked wheather the item added is an existing item
            let existed_item= state.addedItems.find(item=> action.id === item.id)
            if(existed_item)
            {
@@ -115,7 +116,6 @@ const cartReducers = (state = initialState, action = {}) => {
         
         //calculating the total
         let newTotal = state.total - (itemToRemove.Price * itemToRemove.quantity )
-        console.log(itemToRemove)
         return{
             ...state,
             addedItems: new_items,

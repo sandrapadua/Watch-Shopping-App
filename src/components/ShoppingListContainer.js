@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import {addToCart} from '../actions/cartActions'
+import { Link } from 'react-router-dom'
+
 class ShoppingListContainer extends React.Component {
 
        
@@ -16,7 +18,7 @@ render(){
 
     let itemList = items.map(item=>{
         return(
-            <div  className ='flex-container' key={item.id}>
+            <div  className ='item-listing' key={item.id}>
                     <div >
                       
                     <h1 >{item.Manufacturer}</h1>
@@ -25,17 +27,20 @@ render(){
                         <p>{item.Material}</p>
                         <p>{item.color}</p>
                         <p><b>Price: {item.Price}$</b></p>
-                        <span className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span><br/><br/>
+                       <Link to="/"> <span className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span></Link><br/><br/>
                     </div>
              </div>
 
         )
     })
-
+console.log('ITEM LIST',itemList)
     return(
-        <div>
-    {itemList}
-    </div>)
+        <div className="container">
+        <h2 className="center"> Our Products </h2>
+            <div className = 'box'>
+                {itemList}
+            </div>
+         </div>)
 }
 }
 
