@@ -1,10 +1,13 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import {addToCart} from '../actions/cartActions'
+import { Link } from 'react-router-dom'
+
 class ShoppingListContainer extends React.Component {
 
        
     handleClick = (id)=>{
+        alert("Added to cart")
         console.log("clicked")
         this.props.addToCart(id); 
     }
@@ -16,26 +19,29 @@ render(){
 
     let itemList = items.map(item=>{
         return(
-            <div  className ='flex-container' key={item.id}>
-                    <div >
+            <div className ='single-item'  key={item.id}>
+                    <div className ='single-item-styling'>
                       
-                    <h1 >{item.Manufacturer}</h1>
-                    <img className ='image-size' src={item.image} alt={item.Manufacturer}/><br/>
+                    <h1 className = 'text-center'>{item.Manufacturer}</h1>
+                    <img className ='product-img' src={item.image} alt={item.Manufacturer}/><br/>
                         <p>{item.desc}</p>
                         <p>{item.Material}</p>
                         <p>{item.color}</p>
-                        <p><b>Price: {item.Price}$</b></p>
-                        <span className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></span><br/><br/>
+                        <p><b>Price: ${item.Price}</b></p>
+                       <Link to="/"> <button className ='cursor' onClick={()=>{this.handleClick(item.id)}}><i>Add to cart</i></button></Link><br/><br/>
                     </div>
              </div>
 
         )
     })
-
+console.log('ITEM LIST',itemList)
     return(
-        <div>
-    {itemList}
-    </div>)
+        <div className="container">
+        <h2 className="center"> Our Products </h2>
+            <div className = 'display-flex'>
+                {itemList}
+            </div>
+         </div>)
 }
 }
 

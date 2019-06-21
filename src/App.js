@@ -10,7 +10,6 @@ class App extends Component {
       <BrowserRouter>
         <div className = 'main-container'>
         <Topbar/>
-        <h2>Shopping app</h2>
         <Route exact path="/" component={ShoppingListContainer}/>
         <Route path="/shoppingCart" component={ShoppingCart}/>
 
